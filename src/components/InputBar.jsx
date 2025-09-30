@@ -12,13 +12,16 @@ const InputBar = ({ value, onChange, onNext, onSkip, disabledNext }) => {
           onChange={(e) => onChange(e.target.value)}
           onKeyDown={(e) => { if (e.key === 'Enter' && !disabledNext) onNext(); }}
         />
-        <button className="btn btn-outline-light skip-btn" type="button" onClick={onSkip}>
-          Skip for now
-        </button>
+      
         <button className="btn next-btn" type="button" onClick={onNext} disabled={disabledNext}>
           Next
         </button>
       </div>
+      <div className='mt-4'>
+        <button className="btn btn-outline-light skip-btn w-100 " type="button" onClick=   {onSkip}>
+          Skip for now
+        </button>
+        </div>
     </div>
   );
 };

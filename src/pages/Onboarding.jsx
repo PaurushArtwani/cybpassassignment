@@ -3,7 +3,7 @@ import ChatBubble from '../components/ChatBubble';
 import InputBar from '../components/InputBar';
 import questions from '../data/questions.json';
 
-const Onboarding = () => {
+const Onboarding = ({ isActive }) => {
   const total = questions.length;
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState({});
@@ -61,9 +61,9 @@ const Onboarding = () => {
   if (index >= total) {
  
     return (
-      <div className="onboarding-card">
+    <div className={`onboarding-card onboarding ${isActive ? "active" : ""}`}>
         <h2 className="mb-2">Thanks — you're all set!</h2>
-        <p className="text-muted">Here’s a summary of your responses and follow-ups:</p>
+        <p className="">Here’s a summary of your responses and follow-ups:</p>
 
         <div className="answers-list mt-3">
           {questions.map((q, i) => {
@@ -88,7 +88,7 @@ const Onboarding = () => {
 
   return (
     <div className="onboarding-card">
-      <h2 className="title mb-5">Welcome! Let's get you set with Themis</h2>
+      <h2 className="title mb-3">Welcome! Let's get you set with Themis</h2>
       <p className="subtitle">
         I'm your AI Agent. I'm here to learn about your needs so we can configure the AI      Management System for you.
       </p>

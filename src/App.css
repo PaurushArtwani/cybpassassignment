@@ -8,20 +8,20 @@ html,body,#root{
               radial-gradient(900px 400px at 90% 85%, rgba(0,40,80,0.35), transparent),
               #071023;
   color: #dff6ff;
-  background-image: url('/bg.jpg'), radial-gradient(1200px 600px at 10% 10%, rgba(18,32,48,0.6), transparent);
+  background-image: radial-gradient(1200px 600px at 10% 10%, rgba(18,32,48,0.6), transparent);
   background-blend-mode: overlay, normal;
   background-size: cover;
   background-position: center;
 }
 
-/* App layout */
+
 .app{
   min-height:100vh;
   display:flex;
   gap:18px;
 }
 
-/* Sidebar */
+
 .sidebar{
   width:84px;
   background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
@@ -70,7 +70,7 @@ html,body,#root{
   color: rgba(255,255,255,0.5);
 }
 
-/* Onboarding card */
+
 .onboarding-card{
   width: 760px;
   max-width: 94%;
@@ -91,13 +91,13 @@ html,body,#root{
   color: rgba(220,240,255,0.8);
 }
 
-/* question count */
+
 .question-count{
   font-weight:600;
   color: rgba(180,220,255,0.9);
 }
 
-/* chat bubbles */
+
 .chat-bubble {
   display:flex;
 }
@@ -123,7 +123,7 @@ html,body,#root{
   box-shadow: 0 6px 20px rgba(2,10,20,0.6);
 }
 
-/* input area */
+
 .input-bar .form-control.input-answer {
   background: rgba(255,255,255,0.02);
   border: 1px solid rgba(255,255,255,0.04);
@@ -132,10 +132,20 @@ html,body,#root{
   padding: 14px 16px;
 }
 .input-bar .skip-btn{
-  border-radius: 0;
-  border-left:0;
-  color: rgba(220,240,255,0.9);
-  background: rgba(255,255,255,0.02);
+  border-radius: 10px;
+    border: 1px solid rgba(100, 190, 255, 0.12);
+    box-shadow: 0 6px 24px rgba(50, 150, 200, 0.08);
+    padding: 10px 20px;
+    background: linear-gradient(90deg, rgba(76, 165, 255, 0.18), rgba(64, 120, 200, 0.12));
+    color: #dffaff;
+}
+.input-bar .skip-btn:hover{
+  transition: all 0.18s ease-in-out;
+  transform: translate(0, -2px);
+   background: linear-gradient(90deg, rgba(76, 165, 255, 0.18), rgba(64, 120, 200, 0.12))!important;
+   border: 1px solid rgba(100, 190, 255, 0.12);
+   color: #dffaff;
+
 }
 .input-bar .next-btn{
   border-radius: 0 10px 10px 0;
@@ -150,23 +160,23 @@ html,body,#root{
   cursor: not-allowed;
 }
 
-/* answers / summary */
+
 .answers-list em{
-  color: rgba(200,240,255,0.9);
+ color: #dffaff!important;
 }
 .subtitle {
-  color: white!important;
+color: #dffaff!important;
 } 
 .app-footer{
-  color: white!important;
+  color: #dffaff!important;
 }
-/* small responsive tweaks */
+
 @media (max-width: 900px) {
   .sidebar { display: none; }
   .onboarding-card { padding: 20px; }
 }
 .app-header {
-  background-color: #0c1123; /* or whatever matches your UI theme */
+  /* background-color: #0c1123;  */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -180,27 +190,13 @@ html,body,#root{
   width: 32px;
 }
 .custom-header {
-  background: linear-gradient(to right, #0b1120, #0c1b30);
-  color: white;
+  /* background: linear-gradient(to right, #0b1120, #0c1b30); */
+ color: #dffaff!important;
   position: relative;
   overflow: hidden;
   z-index: 1;
 }
 
-/* Floating star/particle effect */
-.custom-header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(0, 174, 255, 0.1) 1px, transparent 1px);
-  background-size: 30px 30px;
-  opacity: 0.1;
-  animation: floatStars 60s linear infinite;
-  z-index: 0;
-}
 
 @keyframes floatStars {
   from {
@@ -220,6 +216,148 @@ html,body,#root{
   height: 36px;
   width: 36px;
 }
-.subtitle {
-  color: white!important;
+.subtitle,
+.app-footer {
+  color: #dffaff!important;
+}
+
+
+@media (min-width: 1440px) {
+  .onboarding-card {
+    width: 900px;
+    padding: 40px;
+    font-size: 1rem;
+  }
+  .title {
+    font-size: 32px;
+  }
+  .subtitle {
+    font-size: 18px;
+  }
+}
+
+/* Tablets & small laptops (≤ 1024px) */
+@media (max-width: 1024px) {
+  .app {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .sidebar {
+    width: 100%;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+  }
+  .onboarding-card {
+    width: 100%;
+    padding: 24px;
+  }
+  .title {
+    font-size: 22px;
+  }
+  .subtitle {
+    font-size: 15px;
+  }
+}
+
+/* Tablets & large phones (≤ 768px) */
+@media (max-width: 768px) {
+  .app {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+  }
+
+  .app-header,
+  .app-footer {
+    margin: 10px 0;
+    text-align: center;
+  }
+  .onboarding-card {
+    padding: 18px;
+    font-size: 0.95rem;
+  }
+  .title {
+    font-size: 20px;
+  }
+  .subtitle {
+    font-size: 14px;
+  }
+  .input-bar .form-control.input-answer {
+    font-size: 0.9rem;
+    padding: 12px;
+  }
+  .input-bar .skip-btn,
+  .input-bar .next-btn {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile (≤ 480px) */
+@media (max-width: 480px) {
+  .app {
+    gap: 6px;
+  }
+  .onboarding-card {
+    border-radius: 14px;
+    padding: 16px;
+  }
+  .title {
+    font-size: 18px;
+    text-align: center;
+  }
+  .subtitle {
+    font-size: 13px;
+    text-align: center;
+  }
+  .chat-bubble {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+  .bubble {
+    margin-top: 6px;
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+  .input-bar .form-control.input-answer {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 8px;
+  }
+  .input-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .input-bar .skip-btn,
+  .input-bar .next-btn {
+    width: 100%;
+    border-radius: 8px;
+  }
+}
+.label{
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar.active{
+    display: block;
+    width: 350px;
+
+  }
+  .label{
+  display: block;
+}
+.onboarding-container.active{
+  display: none!important;
+}
+.sidebar {
+  display: none!important;
+}
+
 }
