@@ -166,7 +166,7 @@ html,body,#root{
 }
 .subtitle {
 color: #dffaff!important;
-} 
+}
 .app-footer{
   color: #dffaff!important;
 }
@@ -343,12 +343,14 @@ color: #dffaff!important;
 .label{
   display: none;
 }
-
+.hamburger-icon{
+  display: none;
+}
 @media screen and (max-width: 768px) {
-  .sidebar.active{
-    display: block;
+  .sidebar-container.active{
+    display: block!important;
     width: 350px;
-
+opacity: 1;
   }
   .label{
   display: block;
@@ -356,8 +358,18 @@ color: #dffaff!important;
 .onboarding-container.active{
   display: none!important;
 }
-.sidebar {
+.sidebar-container {
   display: none!important;
+  transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+}
+.nav-icon {
+    width: 200px;
+    height: 47px;
+
+}
+.hamburger-icon{
+  display: block!important;
 }
 
 }
